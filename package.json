@@ -4,15 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config ./config/webpack.config.js"
+    "tsc": "tsc",
+    "rollup": "rollup -c",
+    "build": "npm run tsc && npm run rollup && rm -rf tsc"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^8.0.44",
-    "ts-loader": "^3.0.2",
-    "typescript": "^2.5.3",
-    "webpack": "^3.8.1"
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "^8.2.3",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "typescript": "^2.5.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "koa": "^2.3.0"
+  }
 }
