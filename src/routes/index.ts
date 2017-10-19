@@ -1,7 +1,5 @@
-import { User } from './user'
-import { Test } from './Test';
+import {userRouter} from './user.routes'
 
-export {
-  User,
-  Test
+export default {
+  userRouter,
 }

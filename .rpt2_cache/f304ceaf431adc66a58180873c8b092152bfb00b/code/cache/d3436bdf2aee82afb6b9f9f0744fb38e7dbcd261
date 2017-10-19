@@ -1,0 +1,1 @@
+{"code":"export const sqlOpt = {\r\n    host: '192.168.1.157',\r\n    name: 'zydev',\r\n    pwd: 'zydev',\r\n    port: 3306\r\n};\r\n","map":{"mappings":""}}

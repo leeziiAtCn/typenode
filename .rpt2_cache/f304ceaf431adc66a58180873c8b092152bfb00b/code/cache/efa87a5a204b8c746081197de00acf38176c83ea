@@ -1,0 +1,1 @@
+{"code":"import * as router from 'koa-router';\r\nimport { UserModel } from '../model';\r\nexport const userRouter = new router();\r\nuserRouter.get('/test', async (ctx) => {\r\n    ctx.response.body = await new UserModel().searchAll();\r\n});\r\n","map":{"mappings":""}}

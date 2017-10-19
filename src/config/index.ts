@@ -1,0 +1,1 @@
+export { sqlOpt } from './mysql'
