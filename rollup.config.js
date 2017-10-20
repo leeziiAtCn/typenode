@@ -27,10 +27,6 @@ export default {
     format: 'cjs',
   },
   external: external,
-  watch: {
-    include: 'src/**',
-    exclude: 'node_modules/**'
-  },
   plugins: [
     typescript(),
     commonjs(),
@@ -40,11 +36,13 @@ export default {
     progress({
       clearLine: true,
     }),
-    replace({'import * as ': 'import '}),
+    replace({
+      'import * as ': 'import '
+    }),
     execute([
-      'rm -rf ./dist/template',
+      'rm -rf ./dist/static',
       'rm -rf ./tsc',
-      'cp -R ./src/template ./dist/template',
-    ]),
+      'cp -R ./src/static ./dist/static',
+    ])
   ],
 }

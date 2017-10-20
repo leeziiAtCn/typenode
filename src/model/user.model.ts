@@ -6,11 +6,12 @@ export class UserModel {
   user = sequelize.define(
       'user',
       {
-        name: {
+        username: {
           type: SqlConnect.STRING,
           primaryKey: true,
         },
-        pwd: SqlConnect.STRING,
+        password: SqlConnect.STRING,
+        createtime: SqlConnect.DATE,
       },
       {
         freezeTableName: true,
@@ -22,6 +23,14 @@ export class UserModel {
   searchAll() {
     return this.user.findAll({
       where: {},
+    })
+  }
+
+  createUser(params: { username: string, password: string }) {
+    return this.user.create({
+      username: params.username,
+      password: params.password,
+      createtime: +new Date(),
     })
   }
 }
