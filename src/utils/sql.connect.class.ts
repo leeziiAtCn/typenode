@@ -11,7 +11,8 @@ export class SqlConnect extends Sequelize {
         max: 5000,
         min: 0,
         idle: 10000
-      }
+      },
+      operatorsAliases: false
     })
   }
 }

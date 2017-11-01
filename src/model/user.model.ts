@@ -27,10 +27,15 @@ export class UserModel {
   }
 
   createUser(params: { username: string, password: string }) {
-    return this.user.create({
-      username: params.username,
-      password: params.password,
-      createtime: +new Date(),
+    return this.user.findOrCreate({
+      where: {
+        username: params.username,
+      },
+      defaults: {
+        username: params.username,
+        password: params.password,
+        createtime: +new Date(),
+      },
     })
   }
 }
